@@ -1,0 +1,44 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>Sobriety Calculator</title>
+        <script type="text/javascript" src="date.js"></script>     
+    </head>
+    <body>
+        <h1>Sobriety Calculator</h1>
+        
+        <p>Enter your dry date: <span id="date_example">(example December 4, 2006)</span></p>
+        <form action="#" id="calculator" method="POST">
+            <input type="text" name="date_input" id="date_input"/>
+            <input type="button" name="submit" value="Do it!" onClick="getTime()"/>
+        </form>
+        
+        <div id="results">
+        </div>
+        
+        <script>
+            function getTime() {
+                /* User input variable */
+                var dateInput = document.getElementById('date_input');
+                var dateValue = dateInput.value;
+                
+                /* Date objects using date.js */
+                var today = Date.today();
+                var dryDate = Date.parse(dateValue);
+                var timeSince = today - dryDate;
+                
+                /* The calculations */
+                var seconds = Math.floor(timeSince /1000);
+                var minutes = Math.floor(timeSince / 1000 / 60);
+                var hours = Math.floor(timeSince / 1000 / 60 / 60);
+                var days = Math.floor(timeSince / 1000 / 60 / 60 / 24);
+                var months = Math.floor(timeSince / 1000 / 60 / 60 / 24 / 30);
+                var years = Math.floor(timeSince / 1000 / 60 / 60/ 24 / 365);
+            
+                return document.getElementById('results').innerHTML="<p>You have been sober for:</p><ul><li>" + years + " years, or</li><li>" + months + " months, or</li><li>" + days + " days, or</li><li>" + hours + " hours, or</li><li>" + minutes + " minutes, or</li><li>" + seconds + " seconds, or</li></ul>"
+                
+            }
+        </script>  
+    </body>
+    
+</html>
