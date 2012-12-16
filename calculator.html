@@ -51,8 +51,10 @@
 				{
 					setInterval(testIntervals, 1000);
                 }
-				return document.getElementById('results').innerHTML=buildDisplayString(seconds, minutes, hours, days, months, years);
-                
+				if ( !isNaN(timeSince) )
+				{
+					return document.getElementById('results').innerHTML=buildDisplayString(seconds, minutes, hours, days, months, years);
+                }
             }
 	    	function testIntervals() {
 
