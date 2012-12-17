@@ -73,18 +73,18 @@
                 var days = Math.round(today.getDate() - dryDate.getDate());
                 var months = getMonths(today, dryDate) % 12;
                 var years = getYears(today, dryDate);
-
-				            if ( setupTimer ) {
-					               setInterval(testIntervals, 1000);
+                
+                if ( setupTimer ) {
+                	setInterval(testIntervals, 1000);
                 }
-				            if ( !isNaN(timeSince) ) {
-					               return document.getElementById('results').innerHTML=buildDisplayString(seconds, minutes, hours, days, months, years);
+		if ( !isNaN(timeSince) ) {
+			return document.getElementById('results').innerHTML=buildDisplayString(seconds, minutes, hours, days, months, years);
                 }
             }
             
-	    	      function testIntervals() {
+	    function testIntervals() {
 
-				            getTime(false);
+		getTime(false);
             }
         </script>
     </body>
