@@ -1,9 +1,12 @@
 <!DOCTYPE html>
     <head>
-        <title>A little 'Time Since Calculator</title>
-        <!-- NOTE:  -->
-        <!-- Download the datejs script from http://code.google.com/p/datejs/downloads/list for this calculator to work -->
-        <!-- End NOTE -->
+        <title>A little 'Time-Since' Calculator</title>
+        <!--
+        NOTE:
+        A little easter egg, if you so should choose to call it that:
+        You can type in the time you got sober as well. (00:00:00) format.
+        It will do the calculations as well.
+        -->
     </head>
     <body>
         <h1>Sobriety Calculator</h1>
@@ -52,9 +55,12 @@
             }
             
             function getTime(setupTimer) {
+                /* Get the user input */
                 var dateInput = document.getElementById('date_input');
                 var dateValue = dateInput.value;
                 
+                /* Create the Date Objects
+                (No longer uses date.js, in spite of its coolness.) */
                 var today = new Date();
                 console.log(today);
                 var dryDate = new Date(dateValue); //JS Timestamp
